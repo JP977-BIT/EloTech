@@ -1,36 +1,51 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Elotech — company website
 
-## Getting Started
+Marketing / landing site for Elotech, built with [Next.js](https://nextjs.org) 16, React 19 and Tailwind CSS v4.
 
-First, run the development server:
+## Running locally
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| Command         | Purpose                                   |
+| --------------- | ----------------------------------------- |
+| `npm run dev`   | Development server with hot reload        |
+| `npm run build` | Production build (required before start)  |
+| `npm run start` | Serve the production build                |
+| `npm run lint`  | Run ESLint                                |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Editing content
 
-## Learn More
+All copy lives in two files — no component changes needed:
 
-To learn more about Next.js, take a look at the following resources:
+- **[`content/site.ts`](content/site.ts)** — company name, tagline, hero text, about section, services list, contact details (email / phone / location), footer, and the production `url` used for SEO.
+- **[`content/legal.ts`](content/legal.ts)** — Terms & Conditions and Privacy Policy. Replace the placeholder `paragraphs` arrays with the real text and update `lastUpdated`. Sections can be added, removed or renamed freely.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Pages
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+| Route      | Description                        |
+| ---------- | ---------------------------------- |
+| `/`        | Landing page (hero, about, services, contact) |
+| `/terms`   | Terms & Conditions                 |
+| `/privacy` | Privacy Policy                     |
 
-## Deploy on Vercel
+`robots.txt` and `sitemap.xml` are generated automatically from `app/robots.ts` and `app/sitemap.ts`.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Design
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Colour and font tokens are defined in [`app/globals.css`](app/globals.css) under `@theme inline`. The site is intentionally light-only; the single accent colour is `--color-accent`.
+
+## Before going live
+
+1. Set `site.url` in `content/site.ts` to the real domain.
+2. Replace the placeholder contact email / phone / location in `content/site.ts`.
+3. Paste the final Terms & Conditions and Privacy Policy text into `content/legal.ts`.
+4. Optionally replace `app/favicon.ico` with the Elotech logo.
+
+## Deploying
+
+Deploy on [Vercel](https://vercel.com) — import the repository, keep the default Next.js settings, and it builds automatically on every push.

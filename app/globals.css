@@ -1,26 +1,39 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/*
+ * Make the `dark:` variant class-based instead of media-query based so the
+ * site never auto-switches to dark mode based on OS preference.
+ */
+@custom-variant dark (&:where(.dark, .dark *));
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  --color-background: #ffffff;
+  --color-surface: #fafafa;
+  --color-foreground: #09090b;
+  --color-muted: #52525b;
+  --color-subtle: #a1a1aa;
+  --color-border: #e4e4e7;
+
+  /* Brand blue sampled from the official EloTech logo. */
+  --color-accent: #0e345c;
+  --color-accent-hover: #0a2747;
+  --color-accent-soft: #e8eef5;
+  --color-accent-ring: #a9bbd1;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-background);
+  color: var(--color-foreground);
+}
+
+::selection {
+  background: var(--color-accent-soft);
+  color: var(--color-foreground);
 }
