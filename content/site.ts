@@ -53,7 +53,7 @@ export const site = {
       "From first idea to production launch, EloTech partners with you to ship clean, modern, dependable products — on time and built to scale.",
     primaryCta: { label: "Start a project", href: "/#contact" },
     secondaryCta: { label: "See what we do", href: "/#services" },
-    trustNote: "Web · Mobile · Cloud · Custom software",
+    trustNote: "Web · Mobile · Desktop · Cloud · Custom software",
   },
 
   about: {
@@ -88,6 +88,12 @@ export const site = {
           "Cross-platform iOS and Android apps that feel native, perform well and ship from a single codebase.",
       },
       {
+        icon: "monitor",
+        title: "Desktop applications",
+        description:
+          "Windows and macOS applications that integrate with the systems your business already runs on, built for everyday use.",
+      },
+      {
         icon: "code",
         title: "Custom software",
         description:
@@ -101,9 +107,9 @@ export const site = {
       },
       {
         icon: "cloud",
-        title: "Cloud & DevOps",
+        title: "Cloud hosting",
         description:
-          "Secure, scalable infrastructure, CI/CD pipelines and deployments that let you release with confidence.",
+          "Secure, reliable hosting for your applications and services, with monitoring, backups and updates taken care of for you.",
       },
       {
         icon: "wrench",
