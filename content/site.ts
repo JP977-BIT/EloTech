@@ -54,7 +54,6 @@ export const site = {
   },
 
   about: {
-    eyebrow: "About EloTech",
     heading: "About EloTech",
     paragraphs: [
       "EloTech Software Development (Pty) Ltd builds and supports RevLink, MobiLink and the Alpha API: a connected software suite that gives businesses running Revelation Accounting Software access to their data from the field, with full control over which devices can reach it. EloTech is a sister company of Revelation Accounting Software. Your business data stays on your own systems. Our software connects to it securely rather than storing a copy.",
