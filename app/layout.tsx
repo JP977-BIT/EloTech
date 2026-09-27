@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { site } from "@/content/site";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { defaultTitle, openGraph } from "./shared-metadata";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -15,8 +16,6 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const defaultTitle = `${site.name} — ${site.tagline}`;
-
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
@@ -24,14 +23,7 @@ export const metadata: Metadata = {
     template: `%s | ${site.name}`,
   },
   description: site.description,
-  openGraph: {
-    type: "website",
-    siteName: site.name,
-    url: "/",
-    title: defaultTitle,
-    description: site.description,
-    locale: site.locale,
-  },
+  openGraph,
   twitter: {
     card: "summary",
     title: defaultTitle,

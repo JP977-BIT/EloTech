@@ -1,10 +1,10 @@
 /**
- * Legal documents: Terms & Conditions, General Privacy Policy, RevLink Privacy
- * Policy and Refund Policy.
+ * Legal documents: Terms & Conditions, Privacy Policy and Refund Policy.
  *
  * Edit the text here — the pages render whatever is in these objects.
  * Section headings are numbered automatically in order, so don't prefix them
  * with numbers. Remember to bump `lastUpdated` when the wording changes.
+ * Paragraphs and list items support inline `**bold**` and `[label](href)` links.
  */
 
 export type LegalBlock =
@@ -18,7 +18,7 @@ export type LegalSection = {
 };
 
 export type LegalDoc = {
-  slug: "terms" | "privacy" | "revlink-privacy" | "refund";
+  slug: "terms" | "privacy" | "refund";
   title: string;
   description: string;
   /** The legal entity the document is issued by. */
@@ -26,8 +26,6 @@ export type LegalDoc = {
   /** Human-readable date shown on the page, e.g. "27 August 2026". */
   lastUpdated: string;
   intro: string[];
-  /** Optional un-numbered body shown before the numbered sections. */
-  body?: LegalBlock[];
   sections: LegalSection[];
 };
 
@@ -42,53 +40,13 @@ const list = (...items: string[]): LegalBlock => ({ type: "list", items });
 
 export const privacy: LegalDoc = {
   slug: "privacy",
-  title: "General Privacy Policy",
-  description: "How EloTech protects the privacy of users of its website.",
-  entity: ENTITY,
-  lastUpdated: "27 August 2026",
-  intro: [
-    "The company and/or website owners believes strongly in protecting the privacy of users of its website.",
-  ],
-  body: [
-    p(
-      "EloTech believes strongly in protecting the privacy of users of its website. There may be times when you will register for services on this website and you may be required to provide personal information including, but not limited to, the following:",
-    ),
-    list(
-      "Your name and surname",
-      "Telephone numbers",
-      "ID number",
-      "E-mail address",
-      "Physical address",
-      "Postal code",
-      "Gender",
-      "Age",
-      "Vehicle Registration Number",
-    ),
-    p(
-      "EloTech will not sell to any third party your name, address, e-mail address and telephone number, unless you provide your informed consent, except to the extent necessary to comply with applicable laws, police investigations, or in legal proceedings where such information is relevant. EloTech allows access to database information by third-parties providing technical services, such as e-mail, but only to the extent necessary to provide you with those services. In those instances, the third-party is bound by these terms. Your informed consent shall be in the form of an “opt in” or similar policy. You understand and agree that EloTech may disclose to third parties, your postal/zip code, gender and/or age, but only in the form of aggregated information.",
-    ),
-    p(
-      "EloTech reserves the right to offer you third party services and products based on the preferences that you identify during the registration process and based on your subsequent preferences; such offers may be provided to you by EloTech.",
-    ),
-    p(
-      "If you have any questions concerning the privacy policies of EloTech which are not covered in this statement, please contact us with your questions via email: support@elotech.co.za",
-    ),
-    p(
-      "This site may contain links to other Web sites and is not responsible for the privacy practices or the content of these Web sites. Furthermore this site may use third-party advertising companies to serve ads when you visit the site.",
-    ),
-  ],
-  sections: [],
-};
-
-export const revlinkPrivacy: LegalDoc = {
-  slug: "revlink-privacy",
-  title: "RevLink Privacy Policy",
+  title: "Privacy Policy",
   description:
     "How EloTech Software Development (Pty) Ltd handles your personal information when you use RevLink, MobiLink and the Alpha API.",
   entity: ENTITY,
-  lastUpdated: "27 August 2026",
+  lastUpdated: "27 September 2026",
   intro: [
-    "This Privacy Policy explains how EloTech Software Development (Pty) Ltd (\"EloTech\", \"we\", \"us\" or \"our\") handles your personal information when you use the RevLink mobile application (\"RevLink\" or the \"App\"), the MobiLink desktop application, the Alpha API and related services (together, the \"Services\"). We are committed to protecting your privacy in line with the Protection of Personal Information Act 4 of 2013 (\"POPIA\").",
+    "This Privacy Policy explains how EloTech Software Development (Pty) Ltd (\"EloTech\", \"we\", \"us\" or \"our\") handles your personal information when you visit our website at www.elotechit.com or use the RevLink mobile application (\"RevLink\" or the \"App\"), the MobiLink desktop application, the Alpha API and related services (together, the \"Services\"). We are committed to protecting your privacy in line with the Protection of Personal Information Act 4 of 2013 (\"POPIA\").",
     "By using the Services you agree to the terms of this policy. Where we rely on your consent for specific processing, such as location tracking, that consent is obtained separately and may be withdrawn at any time.",
   ],
   sections: [
@@ -132,6 +90,9 @@ export const revlinkPrivacy: LegalDoc = {
         ),
         p(
           "The App does not send crash reports, error logs or analytics to any third-party service. We do not collect or store your payment card details.",
+        ),
+        p(
+          "**Website visitors:** Our website does not use cookies, analytics or advertising, and does not ask you to register or submit personal information. If you contact us by email or phone, your details are used only to respond to you and are retained as support correspondence (see section 10). Our website hosting provider may process basic technical information, such as IP addresses, to deliver the site securely.",
         ),
       ],
     },
@@ -277,7 +238,7 @@ export const refund: LegalDoc = {
   title: "Refund Policy",
   description: "EloTech's refund and cancellation policy for RevLink subscriptions.",
   entity: ENTITY,
-  lastUpdated: "27 August 2026",
+  lastUpdated: "27 September 2026",
   intro: [
     "This Refund Policy sets out how cancellations and refunds are handled for RevLink subscriptions sold by EloTech Software Development (Pty) Ltd through our Merchant of Record, Paddle.com.",
   ],
@@ -294,7 +255,7 @@ export const refund: LegalDoc = {
       heading: "Subscription basis",
       blocks: [
         p(
-          "RevLink is sold as a recurring monthly subscription, charged per device at R450 per device per month. Access is provided immediately on activation of a device.",
+          "RevLink is sold as a recurring monthly subscription for each device, at R450 per device per month. Each device's subscription is purchased in the RevLink app on that device. Access is provided as soon as the subscription is active and the device has been authorised in MobiLink.",
         ),
       ],
     },
@@ -305,7 +266,7 @@ export const refund: LegalDoc = {
           "Subscription charges are non-refundable. Once a monthly billing period has commenced and access has been provided, that period's charge is not refunded, whether or not the subscription is used during that period.",
         ),
         p(
-          "This includes where a device is deactivated part-way through a billing period. Deactivation prevents further billing but does not entitle the subscriber to a refund of the current period.",
+          "Deactivating a device in MobiLink removes its access to your company's data but does not cancel its subscription and does not entitle the subscriber to a refund. To stop billing for a device, cancel that device's subscription.",
         ),
       ],
     },
@@ -313,7 +274,7 @@ export const refund: LegalDoc = {
       heading: "Cancelling your subscription",
       blocks: [
         p(
-          "You may cancel at any time. Cancellation takes effect at the end of the current billing period, after which no further payments will be taken. You retain access for the remainder of the period already paid for.",
+          "You may cancel at any time. Cancellation takes effect at the end of the current billing period, after which no further payments will be taken. You retain access for the remainder of the period already paid for. Each device's subscription is cancelled separately.",
         ),
         p(
           "To cancel, contact us at support@elotech.co.za or 011 578 1422, or manage your subscription through Paddle at paddle.net.",
@@ -364,7 +325,7 @@ export const terms: LegalDoc = {
   title: "Terms and Conditions",
   description: "The terms and conditions governing use of RevLink, MobiLink and the Alpha API.",
   entity: ENTITY,
-  lastUpdated: "27 August 2026",
+  lastUpdated: "27 September 2026",
   intro: [
     "These Terms and Conditions govern your use of the RevLink mobile application, the MobiLink desktop application, the Alpha API and related services (the \"Services\"), provided by EloTech Software Development (Pty) Ltd.",
   ],
@@ -404,12 +365,14 @@ export const terms: LegalDoc = {
     {
       heading: "Fees and payment",
       blocks: [
-        p("RevLink is charged at R450 per device per month. EloTech is not currently registered for VAT and no VAT is charged."),
         p(
-          "Payments are processed by Paddle.com, which acts as Merchant of Record for all transactions. Paddle's Buyer Terms and Refund Policy apply to your purchase.",
+          "RevLink is charged at R450 per device per month, excluding tax. Each device requires its own subscription, which is purchased in the RevLink app on that device. Subscriptions are not sold through MobiLink, the Alpha API or our website.",
         ),
         p(
-          "Subscriptions renew automatically each month until cancelled. The number of devices billed is determined by the number of devices activated through MobiLink. Activating an additional device increases the amount payable.",
+          "Our order process is conducted by our online reseller Paddle.com. Paddle.com is the Merchant of Record for all our orders and sells the subscription to you. Paddle calculates, collects and remits any applicable tax, including VAT, which is shown at checkout. Paddle's Buyer Terms and Refund Policy apply to your purchase.",
+        ),
+        p(
+          "Each subscription renews automatically every month until it is cancelled. A device can access your company's data only while it has an active subscription and is authorised in MobiLink. Deactivating a device in MobiLink does not cancel its subscription.",
         ),
         p("We may change our fees on 30 days' written notice. Continued use after the change takes effect constitutes acceptance."),
       ],
@@ -447,7 +410,7 @@ export const terms: LegalDoc = {
     {
       heading: "Personal information and tracking",
       blocks: [
-        p("Our handling of personal information is set out in our Privacy Policy."),
+        p("Our handling of personal information is set out in our [Privacy Policy](/privacy)."),
         p(
           "Where the day-tracking feature is used, you are the responsible party under the Protection of Personal Information Act 4 of 2013 in respect of your employees' location and activity records. You are responsible for informing your employees, obtaining any necessary consent, and complying with POPIA and applicable employment law. EloTech acts as an operator on your instruction.",
         ),

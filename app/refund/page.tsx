@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { openGraph } from "@/app/shared-metadata";
 import { refund } from "@/content/legal";
 import { LegalPage } from "@/components/LegalPage";
 
@@ -6,6 +7,7 @@ export const metadata: Metadata = {
   title: refund.title,
   description: refund.description,
   alternates: { canonical: "/refund" },
+  openGraph: { ...openGraph, url: "/refund" },
 };
 
 export default function RefundPage() {

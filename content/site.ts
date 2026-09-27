@@ -31,99 +31,40 @@ export type NavLink = { label: string; href: string };
 export const site = {
   name: "EloTech",
   legalName: "EloTech Software Development (Pty) Ltd",
-  tagline: "Connected business solutions",
+  tagline: "Mobile quotes and orders for Revelation Accounting",
   description:
-    "EloTech is a software development company specialising in building connected business solutions across mobile, desktop and API platforms.",
-  // TODO: replace with the real production domain before launch (used for SEO, sitemap, OpenGraph).
-  url: "https://elotech.vercel.app",
+    "RevLink, MobiLink and the Alpha API: mobile quotes, orders and stock for businesses running Revelation Accounting Software, with device control included.",
+  url: "https://www.elotechit.com",
   locale: "en_ZA",
 
   nav: [
     { label: "About", href: "/#about" },
-    { label: "Services", href: "/#services" },
     { label: "Products", href: "/#products" },
     { label: "Pricing", href: "/revlink#pricing" },
     { label: "Contact", href: "/#contact" },
   ] satisfies NavLink[],
 
   hero: {
-    eyebrow: "Software development house",
-    headline: "We design and build software that moves your business forward.",
+    eyebrow: "RevLink for Revelation Accounting Software",
+    headline: "Your Revelation Accounting data, wherever your team works.",
     subheadline:
-      "From first idea to production launch, EloTech partners with you to ship clean, modern, dependable products — on time and built to scale.",
-    primaryCta: { label: "Start a project", href: "/#contact" },
-    secondaryCta: { label: "See what we do", href: "/#services" },
-    trustNote: "Web · Mobile · Desktop · Cloud · Custom software",
+      "RevLink puts quotes, orders and stock in your field team's hands, with MobiLink device control and the Alpha API included in every subscription.",
+    primaryCta: { label: "See pricing", href: "/revlink#pricing" },
+    secondaryCta: { label: "Explore RevLink", href: "/revlink" },
   },
 
   about: {
     eyebrow: "About EloTech",
-    heading: "A focused team of engineers and designers who care about the details.",
+    heading: "About EloTech",
     paragraphs: [
-      "EloTech is a software development company specialising in building connected business solutions across mobile, desktop and API platforms. We design and deliver software that extends the systems businesses already rely on, giving teams access to their operational data wherever they work.",
-      "Our current product suite consists of three integrated solutions: RevLink, MobiLink, and the Alpha API. Each product is available on its own, and together they form a complete mobile-enabled workflow for businesses running Revelation Accounting Software.",
+      "EloTech Software Development (Pty) Ltd builds and supports RevLink, MobiLink and the Alpha API: a connected software suite that gives businesses running Revelation Accounting Software access to their data from the field, with full control over which devices can reach it. EloTech is a sister company of Revelation Accounting Software. Your business data stays on your own systems. Our software connects to it securely rather than storing a copy.",
     ],
-    highlights: [
-      { value: "End-to-end", label: "Strategy, design, build and support" },
-      { value: "Modern stack", label: "TypeScript, React, Next.js, cloud-native" },
-      { value: "Transparent", label: "Clear timelines, fixed scope, no surprises" },
-    ],
-  },
-
-  services: {
-    eyebrow: "What we do",
-    heading: "Everything you need to take a product from idea to launch.",
-    lede: "Whether you need a full build or a specialist team to plug in alongside your own, we've got you covered.",
-    items: [
-      {
-        icon: "globe",
-        title: "Web applications",
-        description:
-          "Fast, accessible and SEO-friendly websites and web apps built with modern frameworks and best practices.",
-      },
-      {
-        icon: "smartphone",
-        title: "Mobile apps",
-        description:
-          "Cross-platform iOS and Android apps that feel native, perform well and ship from a single codebase.",
-      },
-      {
-        icon: "monitor",
-        title: "Desktop applications",
-        description:
-          "Windows and macOS applications that integrate with the systems your business already runs on, built for everyday use.",
-      },
-      {
-        icon: "code",
-        title: "Custom software",
-        description:
-          "Bespoke systems, integrations and internal tools designed around how your business actually works.",
-      },
-      {
-        icon: "layout",
-        title: "UI / UX design",
-        description:
-          "Clean, intuitive interfaces grounded in research — designed to be used, not just admired.",
-      },
-      {
-        icon: "cloud",
-        title: "Cloud hosting",
-        description:
-          "Secure, reliable hosting for your applications and services, with monitoring, backups and updates taken care of for you.",
-      },
-      {
-        icon: "wrench",
-        title: "Support & maintenance",
-        description:
-          "Ongoing care for the products we build — monitoring, updates, improvements and rapid fixes.",
-      },
-    ] satisfies { icon: IconName; title: string; description: string }[],
   },
 
   products: {
-    eyebrow: "What we've built",
+    eyebrow: "Products",
     heading: "Our product suite.",
-    lede: "Three integrated solutions — each available on its own, and together a complete mobile-enabled workflow for businesses running Revelation Accounting Software.",
+    lede: "Three components that work together as one system. Every RevLink subscription includes MobiLink and the Alpha API access RevLink needs.",
     items: [
       {
         icon: "smartphone",
@@ -152,7 +93,6 @@ export const site = {
         platform: "Integration Layer",
         paragraphs: [
           "The Alpha API is the connective layer that enables communication between mobile and desktop environments. It is the component that allows RevLink and MobiLink to operate as a single system rather than as isolated applications.",
-          "The Alpha API is also available as a standalone service for businesses that require a secure, reliable integration layer between their own platforms.",
         ],
       },
     ] satisfies {
@@ -168,7 +108,7 @@ export const site = {
   /** Dedicated RevLink product page (/revlink). Product copy is pulled from `products.items`. */
   revlink: {
     headline: "Quotes and orders from the field, in real time.",
-    primaryCta: { label: "Get in touch", href: "/#contact" },
+    primaryCta: { label: "How to subscribe", href: "#subscribe" },
     secondaryCta: { label: "See pricing", href: "/revlink#pricing" },
   },
 
@@ -251,30 +191,29 @@ export const site = {
     plan: {
       name: "RevLink Subscription",
       price: "R450",
-      unit: "per device, per month",
+      unit: "per device, per month, excluding tax",
       includes: [
         "RevLink — the mobile application",
         "MobiLink — device management and management dashboard",
         "Alpha API — integration access as required for RevLink to operate",
       ],
       paragraphs: [
-        "RevLink is licensed on a per-device basis. Each mobile device that connects to the system requires its own active subscription. Devices are activated and deactivated through MobiLink, giving administrators direct control over how many active licences are in use at any time.",
+        "RevLink is licensed per device. Each device has its own subscription, bought in the RevLink app on that device. Administrators control which devices can access company data through MobiLink.",
         "There is no additional charge for MobiLink or for the API access required by RevLink, regardless of the number of devices subscribed.",
       ],
-      cta: { label: "Get in touch", href: "/#contact" },
+      cta: { label: "How to subscribe", href: "#subscribe" },
+      /** Billing terms shown directly under the plan card. */
+      notes: [
+        "Billed monthly, per device. Each subscription renews automatically until cancelled. Cancel anytime; cancellation takes effect at the end of the current billing period. Requires an existing, licensed installation of Revelation Accounting Software.",
+        "Our order process is conducted by our online reseller Paddle.com. Paddle.com is the Merchant of Record for all our orders.",
+      ],
     },
     details: [
       {
         title: "Scope of API access",
         intro: [
           "API access provided under the RevLink subscription is limited to the communication required between the RevLink mobile application and the customer's Revelation Accounting system.",
-          "This subscription does not grant a general-purpose API licence. Customers who wish to integrate the Alpha API into their own applications, or use it independently of RevLink, require a separate Alpha API licence. Please contact us for details.",
-        ],
-      },
-      {
-        title: "Standalone Alpha API",
-        intro: [
-          "The Alpha API is available independently for businesses requiring a secure integration layer between their own systems. Pricing is quoted on request based on requirements.",
+          "This subscription does not grant a general-purpose API licence. Any other use of the Alpha API requires a separate written agreement with EloTech.",
         ],
       },
       {
@@ -294,21 +233,40 @@ export const site = {
     ] satisfies { title: string; intro: string[]; items?: string[]; outro?: string[] }[],
   },
 
+  /**
+   * "How to subscribe" section on /revlink, shown after pricing.
+   * `needs` and `outro` support inline `**bold**` and `[label](href)` links.
+   */
+  subscribe: {
+    heading: "How to subscribe",
+    lede: "RevLink subscriptions are bought and paid for only inside the RevLink app, one device at a time.",
+    needsIntro: "Each device needs two things before it can reach your company's data:",
+    needs: [
+      "**An active RevLink subscription.** Install RevLink on the device and subscribe in the app for R450 per month, excluding tax. Payment is handled securely by Paddle.com, our Merchant of Record. You'll be asked to accept our [Terms & Conditions](/terms) and [Refund Policy](/refund) before you pay.",
+      "**Authorisation in MobiLink.** Your administrator approves the device in MobiLink on the desktop.",
+    ],
+    outro:
+      "Each device's subscription is managed and cancelled separately, at [paddle.net](https://paddle.net) or by contacting us. Deactivating a device in MobiLink removes its access but does not cancel its subscription.",
+    cta: {
+      label: "Get RevLink on Google Play",
+      href: "https://play.google.com/store/apps/details?id=com.revelation.rev_mobile",
+    },
+  },
+
   custom: {
     eyebrow: "Custom software development",
     heading: "Need something built around the way your business works?",
     paragraphs: [
       "Beyond our product suite, EloTech undertakes bespoke software development for clients requiring solutions tailored to their specific operational requirements, across mobile, desktop and web platforms.",
-      "Enquiries for custom development are handled directly by our team — please get in touch to discuss your requirements.",
+      "Enquiries for custom development are handled directly by our team — please get in touch to discuss your requirements. Custom development is quoted and invoiced separately. It is not sold through this website or the RevLink app.",
     ],
     cta: { label: "Get in touch", href: "/#contact" },
   },
 
   contact: {
     eyebrow: "Get in touch",
-    heading: "Have a project in mind? Let's talk.",
-    blurb:
-      "Tell us a little about what you're building and we'll come back to you with honest advice on the best way forward — no obligation.",
+    heading: "Questions about RevLink? Talk to us.",
+    blurb: "Speak to our team about getting set up, your subscription, or support.",
     email: "support@elotech.co.za",
     phone: "011 578 1422",
     location: "12 Dagbreek Street, Glen Marais, Kempton Park, Gauteng, 1619",
@@ -316,11 +274,10 @@ export const site = {
   },
 
   footer: {
-    blurb: "A software development house building clean, modern products for the real world.",
+    blurb: "RevLink, MobiLink and the Alpha API for businesses running Revelation Accounting Software.",
     legalLinks: [
       { label: "Terms & Conditions", href: "/terms" },
       { label: "Privacy Policy", href: "/privacy" },
-      { label: "RevLink Privacy Policy", href: "/revlink/privacy" },
       { label: "Refund Policy", href: "/refund" },
     ] satisfies NavLink[],
   },

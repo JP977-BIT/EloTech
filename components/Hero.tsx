@@ -38,7 +38,6 @@ export function Hero() {
               {hero.secondaryCta.label}
             </Button>
           </div>
-          <p className="mt-10 text-sm text-subtle">{hero.trustNote}</p>
         </div>
       </Container>
     </section>

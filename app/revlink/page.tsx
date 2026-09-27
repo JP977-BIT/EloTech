@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
+import { openGraph } from "@/app/shared-metadata";
 import { site } from "@/content/site";
 import { RevLinkHero } from "@/components/RevLinkHero";
 import { Features } from "@/components/Features";
 import { Pricing } from "@/components/Pricing";
+import { Subscribe } from "@/components/Subscribe";
 import { Contact } from "@/components/Contact";
 
 const product = site.products.items.find((item) => item.name === "RevLink");
@@ -11,6 +13,7 @@ export const metadata: Metadata = {
   title: "RevLink — Mobile quotes and orders for Revelation Accounting",
   description: product?.paragraphs[0],
   alternates: { canonical: "/revlink" },
+  openGraph: { ...openGraph, url: "/revlink" },
 };
 
 export default function RevLinkPage() {
@@ -19,6 +22,7 @@ export default function RevLinkPage() {
       <RevLinkHero />
       <Features />
       <Pricing />
+      <Subscribe />
       <Contact />
     </>
   );

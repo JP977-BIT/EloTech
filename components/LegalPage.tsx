@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { LegalBlock, LegalDoc } from "@/content/legal";
 import { Container } from "./Container";
+import { RichText } from "./RichText";
 
 type LegalPageProps = {
   doc: LegalDoc;
@@ -14,13 +15,19 @@ function Block({ block }: { block: LegalBlock }) {
       return (
         <ul className="list-disc space-y-1.5 pl-6">
           {block.items.map((item) => (
-            <li key={item}>{item}</li>
+            <li key={item}>
+              <RichText text={item} />
+            </li>
           ))}
         </ul>
       );
     case "p":
     default:
-      return <p>{block.text}</p>;
+      return (
+        <p>
+          <RichText text={block.text} />
+        </p>
+      );
   }
 }
 
@@ -47,14 +54,6 @@ export function LegalPage({ doc }: LegalPageProps) {
             ))}
           </div>
         </header>
-
-        {doc.body?.length ? (
-          <div className="mt-10 space-y-4 text-base leading-relaxed text-muted">
-            {doc.body.map((block, i) => (
-              <Block key={i} block={block} />
-            ))}
-          </div>
-        ) : null}
 
         <div className="mt-10 space-y-10">
           {doc.sections.map((section, index) => (

@@ -21,6 +21,8 @@ type ButtonProps = {
   children: ReactNode;
   variant?: ButtonVariant;
   className?: string;
+  /** Open the link in a new tab. */
+  newTab?: boolean;
 };
 
 function isExternal(href: string) {
@@ -28,17 +30,18 @@ function isExternal(href: string) {
 }
 
 /** Renders a styled link. Uses `next/link` for internal routes and a plain anchor for mailto/tel/external. */
-export function Button({ href, children, variant = "primary", className = "" }: ButtonProps) {
+export function Button({ href, children, variant = "primary", className = "", newTab = false }: ButtonProps) {
   const classes = buttonClasses(variant, className);
+  const tabProps = newTab ? { target: "_blank", rel: "noopener noreferrer" } : {};
   if (isExternal(href)) {
     return (
-      <a href={href} className={classes}>
+      <a href={href} className={classes} {...tabProps}>
         {children}
       </a>
     );
   }
   return (
-    <Link href={href} className={classes}>
+    <Link href={href} className={classes} {...tabProps}>
       {children}
     </Link>
   );
