@@ -238,9 +238,9 @@ export const refund: LegalDoc = {
   title: "Refund Policy",
   description: "EloTech's refund and cancellation policy for RevLink subscriptions.",
   entity: ENTITY,
-  lastUpdated: "27 September 2026",
+  lastUpdated: "14 October 2026",
   intro: [
-    "This Refund Policy sets out how cancellations and refunds are handled for RevLink subscriptions sold by EloTech Software Development (Pty) Ltd through our Merchant of Record, Paddle.com.",
+    "This Refund Policy explains how refunds and cancellations work for RevLink subscriptions sold by EloTech Software Development (Pty) Ltd.",
   ],
   sections: [
     {
@@ -255,18 +255,23 @@ export const refund: LegalDoc = {
       heading: "Subscription basis",
       blocks: [
         p(
-          "RevLink is sold as a recurring monthly subscription for each device, at R450 per device per month. Each device's subscription is purchased in the RevLink app on that device. Access is provided as soon as the subscription is active and the device has been authorised in MobiLink.",
+          "RevLink is sold as a recurring monthly subscription at R450 per device per month, excluding tax. Each device has its own subscription. Access is provided immediately when a device is activated.",
         ),
       ],
     },
     {
-      heading: "Non-refundable by default",
+      heading: "Refund period",
       blocks: [
         p(
-          "Subscription charges are non-refundable. Once a monthly billing period has commenced and access has been provided, that period's charge is not refunded, whether or not the subscription is used during that period.",
+          "You can request a refund within 14 days of the date of the payment you want refunded. Refund requests are handled by Paddle in line with the [Paddle Refund Policy](https://www.paddle.com/legal/refund-policy).",
         ),
+      ],
+    },
+    {
+      heading: "How to request a refund",
+      blocks: [
         p(
-          "Deactivating a device in MobiLink removes its access to your company's data but does not cancel its subscription and does not entitle the subscriber to a refund. To stop billing for a device, cancel that device's subscription.",
+          "Go to [paddle.net](https://paddle.net) and select \"Request refund\", or use the support link in your Paddle receipt email. If you need help with this, you can also contact us at support@elotech.co.za.",
         ),
       ],
     },
@@ -274,37 +279,29 @@ export const refund: LegalDoc = {
       heading: "Cancelling your subscription",
       blocks: [
         p(
-          "You may cancel at any time. Cancellation takes effect at the end of the current billing period, after which no further payments will be taken. You retain access for the remainder of the period already paid for. Each device's subscription is cancelled separately.",
+          "You can cancel at any time. Cancellation takes effect at the end of the current billing period, and no further payments will be taken. You keep access until the end of the period you have already paid for.",
         ),
         p(
-          "To cancel, contact us at support@elotech.co.za or 011 578 1422, or manage your subscription through Paddle at paddle.net.",
+          "To cancel, use the \"Manage subscription\" link in your Paddle confirmation email, go to [paddle.net](https://paddle.net), or contact us at support@elotech.co.za or 011 578 1422.",
+        ),
+        p(
+          "Each device's subscription is cancelled separately. Deactivating a device in MobiLink removes its access but does not cancel its subscription.",
         ),
       ],
     },
     {
-      heading: "Statutory rights",
+      heading: "Your statutory rights",
       blocks: [
         p(
           "Nothing in this policy limits any rights you may have under applicable law, including the Consumer Protection Act 68 of 2008 and the Electronic Communications and Transactions Act 25 of 2002 in South Africa, or equivalent legislation in your jurisdiction. Where a statutory right to withdraw or obtain a refund applies, that right prevails over this policy.",
         ),
-        p(
-          "By subscribing and activating a device, you request immediate access to the Services and acknowledge that any statutory cooling-off period may be affected once access has been provided.",
-        ),
       ],
     },
     {
-      heading: "Requesting a refund",
+      heading: "Problems with RevLink",
       blocks: [
         p(
-          "Because Paddle is the Merchant of Record, all refund requests must be directed to Paddle at paddle.net. Refunds are granted at Paddle's discretion and in accordance with Paddle's Refund Policy and Buyer Terms.",
-        ),
-      ],
-    },
-    {
-      heading: "Service faults",
-      blocks: [
-        p(
-          "Where the Services are materially unavailable due to a fault on our side, contact us at support@elotech.co.za. We will investigate and, where appropriate, support a refund or credit request with Paddle. This does not apply to interruptions caused by your own systems, network, hardware, or third-party software.",
+          "If RevLink isn't working as expected, contact us at support@elotech.co.za or 011 578 1422 and we'll help sort it out. This does not affect your right to request a refund under section 3.",
         ),
       ],
     },
@@ -325,7 +322,7 @@ export const terms: LegalDoc = {
   title: "Terms and Conditions",
   description: "The terms and conditions governing use of RevLink, MobiLink and the Alpha API.",
   entity: ENTITY,
-  lastUpdated: "27 September 2026",
+  lastUpdated: "14 October 2026",
   intro: [
     "These Terms and Conditions govern your use of the RevLink mobile application, the MobiLink desktop application, the Alpha API and related services (the \"Services\"), provided by EloTech Software Development (Pty) Ltd.",
   ],
@@ -366,13 +363,13 @@ export const terms: LegalDoc = {
       heading: "Fees and payment",
       blocks: [
         p(
-          "RevLink is charged at R450 per device per month, excluding tax. Each device requires its own subscription, which is purchased in the RevLink app on that device. Subscriptions are not sold through MobiLink, the Alpha API or our website.",
+          "RevLink is charged at R450 per device per month, excluding tax. Any applicable taxes are calculated and added by Paddle at checkout. Each device has its own subscription, bought in the RevLink app on that device. Subscriptions are not sold through MobiLink, the Alpha API or our website.",
         ),
         p(
-          "Our order process is conducted by our online reseller Paddle.com. Paddle.com is the Merchant of Record for all our orders and sells the subscription to you. Paddle calculates, collects and remits any applicable tax, including VAT, which is shown at checkout. Paddle's Buyer Terms and Refund Policy apply to your purchase.",
+          "Our order process is conducted by our online reseller Paddle.com. Paddle.com is the Merchant of Record for all our orders. Paddle's Buyer Terms and Refund Policy apply to your purchase, and our [Refund Policy](/refund) explains how to request a refund.",
         ),
         p(
-          "Each subscription renews automatically every month until it is cancelled. A device can access your company's data only while it has an active subscription and is authorised in MobiLink. Deactivating a device in MobiLink does not cancel its subscription.",
+          "Subscriptions renew automatically each month until cancelled. Each device's subscription is cancelled separately at paddle.net or by contacting us. A device can access your company's data only while it has an active subscription and is authorised in MobiLink. Deactivating a device in MobiLink removes its access but does not cancel its subscription.",
         ),
         p("We may change our fees on 30 days' written notice. Continued use after the change takes effect constitutes acceptance."),
       ],
@@ -381,7 +378,7 @@ export const terms: LegalDoc = {
       heading: "Setup and additional services",
       blocks: [
         p(
-          "The subscription covers software access only. It does not include network, router, firewall or server configuration work. Where such work is required and arranged by us through third-party contractors, it is quoted and invoiced separately. You may arrange for your own IT provider to perform this work instead.",
+          "The subscription covers software access only. It does not include network, router, firewall or server configuration work. Where such work is required and arranged by us through third-party contractors, it is quoted and invoiced separately by EloTech and is not sold through Paddle. You may arrange for your own IT provider to perform this work instead.",
         ),
       ],
     },
@@ -392,7 +389,7 @@ export const terms: LegalDoc = {
           "We grant you a non-exclusive, non-transferable, revocable licence to use the Services for your internal business purposes for the duration of your subscription.",
         ),
         p(
-          "You may not: copy, modify, decompile or reverse-engineer the Services; resell, sublicense or provide the Services to third parties; use the Alpha API outside the scope permitted by your subscription; circumvent device activation controls; or use the Services unlawfully.",
+          "You may not: copy, modify, decompile or reverse-engineer the Services; resell, sublicense or provide the Services to third parties; use the Alpha API outside the scope permitted by your subscription; circumvent device activation controls; use the Services unlawfully, fraudulently or to send spam; infringe anyone's intellectual property rights through the Services; or interfere with the security or operation of the Services, including by introducing malware, probing for vulnerabilities or scraping data.",
         ),
       ],
     },
